@@ -13,6 +13,13 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
   dotnet --version
   ```
 
+### appsettings.json
+Create appsettings.json on the project directory
+{
+  "MicrosoftAppId": "your-registration-app-id",
+  "MicrosoftAppPassword": "your-registration-app-password"
+}
+
 ## To try this sample
 
 - In a terminal, navigate to `TeamsEchoBot`

@@ -41,3 +41,5 @@ This sample would help pull user information when being called from Teams client
             await turnContext.SendActivityAsync(MessageFactory.Text($"Echo: {turnContext.Activity.Text} .. {userResponse}"), cancellationToken);
        }
 ```
+
+On this sample, the logic in its entirity is in EchoBot.cs. 
