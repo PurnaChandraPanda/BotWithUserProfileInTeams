@@ -5,6 +5,7 @@
 
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace TeamsEchoBot
 {
@@ -17,6 +18,10 @@ namespace TeamsEchoBot
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) => {
+                config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment}.json", optional: true, reloadOnChange: true);
+            })
                 .UseStartup<Startup>();
     }
 }
