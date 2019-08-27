@@ -1,6 +1,6 @@
 # TeamsEchoBot
 
-This sample would help pull user information when being called from Teams client. Bot service code is written in Node.JS V4 SDK.
+This sample would help pull user information when being called from Teams client. Bot service code is written in Node.JS (JavaScript language) V4 SDK.
 
 ## Prerequisites
 
