@@ -1,24 +1,16 @@
 ﻿# TeamsEchoBot
 
-Bot Framework v4 echo bot sample.
-
-This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to create a simple bot that accepts input from the user and echoes it back.
+This sample would help pull user information when being called from Teams client. Bot service code is written in C# V4 SDK.
 
 ## Prerequisites
 
-- [.NET Core SDK](https://dotnet.microsoft.com/download) version 2.1
+- [.NET Core SDK](https://dotnet.microsoft.com/download) version 2.2
 
   ```bash
   # determine dotnet version
   dotnet --version
   ```
-
-### appsettings.json
-Create appsettings.json on the project directory
-{
-  "MicrosoftAppId": "your-registration-app-id",
-  "MicrosoftAppPassword": "your-registration-app-password"
-}
+- Update `appsettings.json` with correct values of appId and appPassword
 
 ## To try this sample
 
@@ -45,19 +37,9 @@ Create appsettings.json on the project directory
   - Select `TeamsEchoBot.csproj` file
   - Press `F5` to run the project
 
-## Testing the bot using Bot Framework Emulator
+- Create an ngrok endpoint
+- Update the same in Azure bot registraion 
 
-[Bot Framework Emulator](https://github.com/microsoft/botframework-emulator) is a desktop application that allows bot developers to test and debug their bots on localhost or running remotely through a tunnel.
+## Testing the bot
 
-- Install the Bot Framework Emulator version 4.3.0 or greater from [here](https://github.com/Microsoft/BotFramework-Emulator/releases)
-
-### Connect to the bot using Bot Framework Emulator
-
-- Launch Bot Framework Emulator
-- File -> Open Bot
-- Enter a Bot URL of `http://localhost:3978/api/messages`
-
-## Deploy the bot to Azure
-
-To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
-
+You could use the `Test in webchat` or `Microsoft Teams` clients to test the 1:1 flow.
