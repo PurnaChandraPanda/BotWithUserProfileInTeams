@@ -13,7 +13,7 @@ const { BotFrameworkAdapter } = require('botbuilder');
 const { MyBot } = require('./bot');
 
 // Import required bot configuration.
-const ENV_FILE = path.join(__dirname, '.env');
+const ENV_FILE = path.join(__dirname, '..', '.env');
 dotenv.config({ path: ENV_FILE });
 
 // Create HTTP server
@@ -24,14 +24,13 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
     console.log(`\nTo test your bot, see: https://aka.ms/debug-with-emulator`);
 });
 
-// Create adapter.
-// See https://aka.ms/about-bot-adapter to learn more about how bots work.
+// Create adapter
 const adapter = new BotFrameworkAdapter({
     appId: process.env.MicrosoftAppId,
     appPassword: process.env.MicrosoftAppPassword
 });
 
-// Catch-all for errors.
+// Catch-all for errors
 adapter.onTurnError = async (context, error) => {
     // This check writes out errors to console log .vs. app insights.
     console.error(`\n [onTurnError]: ${ error }`);
@@ -40,7 +39,7 @@ adapter.onTurnError = async (context, error) => {
 };
 
 // Create the main dialog.
-const myBot = new MyBot(adapter);
+const myBot = new MyBot();
 
 // Listen for incoming requests.
 server.post('/api/messages', (req, res) => {
